@@ -29,8 +29,14 @@ cv2.waitKey(0)
 # Finding Contours
 contours, hierarchy = cv2.findContours(edged, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
+filteredContours = []
+for contour in contours:
+    x, y, w, h = cv2.boundingRect(contour)
+    if w > 150 and h > 150:
+        filteredContours.append(contour)
+
 # Draw all contours
-cv2.drawContours(im1, contours, -1, (0, 255, 0), 3)
+cv2.drawContours(im1, filteredContours, -1, (0, 255, 0), 3)
 
 im1 = cv2.cvtColor(im1, cv2.COLOR_RGB2BGR)
 cv2.imshow("Contours", im1)
