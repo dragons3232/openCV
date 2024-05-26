@@ -66,6 +66,9 @@ for cnt in filteredContours:
 
 plt.show()
 
+cropped = im1[y : y + h, x : x + w]
+cv2.imwrite("cropped.jpg", cropped)
+
 im1 = cv2.cvtColor(im1, cv2.COLOR_RGB2BGR)
 cv2.imshow("Contours", im1)
 cv2.waitKey(0)
