@@ -30,8 +30,8 @@ for contour in contours:
     x, y, w, h = cv2.boundingRect(contour)
     if w > 150 and h > 150:
         filteredContours.append(contour)
-        cv2.rectangle(im1, (x, y), (x + w, y + h), (0, 255, 0), 3)
-        cv2.rectangle(im2, (x, y), (x + w, y + h), (0, 255, 0), 3)
+        # cv2.rectangle(im1, (x, y), (x + w, y + h), (0, 255, 0), 3)
+        # cv2.rectangle(im2, (x, y), (x + w, y + h), (0, 255, 0), 3)
 
 # # Draw all contours
 # cv2.drawContours(im1, filteredContours, -1, (0, 255, 0), 3)
