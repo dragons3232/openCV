@@ -37,8 +37,8 @@ extractor = SuperPoint(max_num_keypoints=2048).eval().to(device)  # load the ext
 matcher = LightGlue(features="superpoint").eval().to(device)  # load the matcher
 
 # # or DISK+LightGlue, ALIKED+LightGlue or SIFT+LightGlue
-# extractor = DISK(max_num_keypoints=2048).eval().to(device)  # load the extractor
-# matcher = LightGlue(features="disk").eval().to(device)  # load the matcher
+extractor = DoGHardNet(max_num_keypoints=2048).eval().to(device)  # load the extractor
+matcher = LightGlue(features="doghardnet").eval().to(device)  # load the matcher
 
 # load each image as a torch.Tensor on GPU with shape (3,H,W), normalized in [0,1]
 image0 = load_image(source1).to(device)
